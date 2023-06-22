@@ -12,8 +12,6 @@ __email__ = 'hassenbenyedder@gmail.com'
 
 class RestartCommand(sublime_plugin.TextCommand):
     def run(self, edit):
-        path = sublime.load_settings("Restart.sublime-settings").get("path")
-
         if sys.platform == 'win32':
             subprocess.call('taskkill /im sublime_text.exe /f && cmd /C "' +
                             os.path.join(os.getcwd(), 'sublime_text.exe') + '"', shell=True)
